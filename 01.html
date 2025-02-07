@@ -9,12 +9,13 @@
     let nota = Number(prompt(`Informe uma nota entre zero e dez.`));
 
     //PROCESSAMENTO
-    while(nota < 0 || nota > 10 || isNaN()){
+    while (nota < 0 || nota > 10 || isNaN(nota)) {
         alert(`Mensagem inválida, informe novamente!`)
         nota = Number(prompt(`Informe uma nota entre zero e dez.`));
     }
+
     document.write(`Nota informada: ${nota}.`)
 
     //SAÍDA
-
+    
 </script>

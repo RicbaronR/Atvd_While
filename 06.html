@@ -43,6 +43,7 @@
     } else if(voto == 4){
         branco++
     } else{
+        alert(`Número de candidato inválido, voto será anulado!`)
         nulo++
     }
     }
@@ -51,7 +52,7 @@
     } else if(maria>joao){
         mensagem = `Maria foi a vencedora da eleição.`;
     } else{
-        mensagem(`Houve empate entre os dois jogadores.`);
+        mensagem = `Houve empate entre os dois jogadores.`;
     }
     
     document.write(`Candidato Joãozinho: ${joao} votos.<br>
@@ -62,6 +63,7 @@
 
 
     //PROCESSAMENTO
+    
 
 
     //SAÍDA

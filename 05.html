@@ -6,15 +6,17 @@
     */
 
     //ENTRADA
-    let senha = Number(prompt(`Informe uma senha com números inteiros:`));
+    
+    let senha = prompt(`Informe uma senha com números inteiros:`);
 
     //PROCESSAMENTO
-    while(!Number.isInteger(senha)){
+    while(senha.length !== 4 || isNaN(senha)){
         alert(`Senha incorreta!`);
-        senha = Number(prompt(`Informe uma senha com números inteiros:`));
+        senha = prompt(`Informe uma senha com números inteiros:`);
     }
 
     //SAÍDA
     document.write(`Senha correta!`);
+    
 
 </script>

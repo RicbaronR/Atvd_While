@@ -8,9 +8,18 @@
     */
 
     //ENTRADA
+    let num = prompt(`Informe um número de no mínimo 2 dígitos:`);
+    let numInvertido = "";
+    let contagem = num.length - 1;
+
+    while(contagem >= 0){
+        numInvertido+=num[contagem]
+        contagem--
+    }
 
 
     //PROCESSAMENTO
+    document.write(`O inverso de ${num} é ${numInvertido}.`)
 
 
     //SAÍDA

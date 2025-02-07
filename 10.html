@@ -5,11 +5,27 @@
     */
 
     //ENTRADA
+    const sequencia = Number(prompt(`Informe quantos números da sequência de Fibonacci deseja obter:`));
+    while(sequencia <= 0){
+        sequencia = Number(prompt(`Informe novamente, valor inválido:`))
+    }
+
+    let listaSequencia = [];
+    let a = 0, b = 1;
+    let quantNums = 0;
+
+    while (quantNums < sequencia) {
+        listaSequencia.push(a);
+        let temp = a + b; 
+        a = b;
+        b = temp;
+        quantNums++;
+    }
 
 
     //PROCESSAMENTO
-
-
+    document.write(`Sequência de Fibonacci: ${listaSequencia}`)
+    
     //SAÍDA
     
 </script>
