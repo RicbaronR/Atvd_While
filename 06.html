@@ -20,16 +20,13 @@
     */
 
     //ENTRADA
+    let mensagem;
     let joao = 0;
     let maria = 0;
     let nulo = 0;
     let branco = 0;
-    let voto = Number(prompt(`As opções são:
-    1. Candidato Joãozinho
-    2. Candidato Mariazinha
-    3. Nulo
-    4. Branco
-    Entre com o seu voto:`));
+    let voto = -1;
+
     while(voto !== 0){
         voto = Number(prompt(`As opções são:
     1. Candidato Joãozinho
@@ -45,12 +42,23 @@
         nulo++
     } else if(voto == 4){
         branco++
+    } else{
+        nulo++
     }
     }
-    document.write(`Candidato Joãozinho: ${}
-    2. Candidato Mariazinha
-    3. Nulo
-    4. Branco`)
+    if(joao>maria){
+        mensagem = `João foi o vencedor da eleição.`;
+    } else if(maria>joao){
+        mensagem = `Maria foi a vencedora da eleição.`;
+    } else{
+        mensagem(`Houve empate entre os dois jogadores.`);
+    }
+    
+    document.write(`Candidato Joãozinho: ${joao} votos.<br>
+    2. Candidato Mariazinha: ${maria} votos. <br>
+    3. Nulo: ${nulo} votos. Ou seja, ${((nulo/(joao+maria+branco+nulo))*100).toFixed(2).replace(".", ",")}% de todos os votos.<br>
+    4. Branco: ${branco} votos. Ou seja, ${((branco/(joao+maria+nulo+branco))*100).toFixed(2).replace(".", ",")}% de todos os votos.<br>
+    ${mensagem}`);
 
 
     //PROCESSAMENTO

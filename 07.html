@@ -13,9 +13,51 @@
     */
 
     //ENTRADA
+    let idade = 1;
+    let somaSalarios = 0;
+    let maiorIdade = 0;
+    let menorIdade = 0;
+    let menorSalario = 0;
+    let mulheres = 0;
+    let quantSalarios = 0;
+    let idadeMenorSalario = 0;
+    let sexoMenorSalario = '';
+    while(idade>=0){
+        let idade = Number(prompt(`Informe a idade da pessoa:`));
+        let sexo = prompt(`Informe o sexo da pessoa:`).toUpperCase();
+        while(sexo !== "M"&& sexo !== "F"){
+            sexo = prompt(`Informe o sexo da pessoa:`).toUpperCase()
+        }
+        let salario = Number(prompt(`Informe seu salário:`).replace(",", "."));
+
+        if(idade>=maiorIdade){
+            maiorIdade = 0; 
+            maiorIdade+=idade
+        }
+        if(idade<=menorIdade){
+            menorIdade = 0;
+            menorIdade+=idade;
+        }
+        if(salario<=menorSalario){
+            menorSalario = 0;
+            idadeMenorSalario = idade;
+            sexoMenorSalario = sexo;
+        }
+        if(sexo === "F"){
+            mulheres++
+        }
+        quantSalarios++
+        somaSalarios+=salario
+    }
+    const mediaSalarios = somaSalarios/quantSalarios;
 
 
     //PROCESSAMENTO
+
+    document.write(`a) A média dos salários do grupo é R$${mediaSalarios.toFixed(2).replace(".", ",")}.<br>
+    b) A maior idade é ${maiorIdade} e a menor idade é ${menorIdade}.<br>
+    c) A quantidade de mulheres na região é ${mulheres}.<br>
+    d) A idade e o sexo da pessoa que possue o menor salário é, ${idadeMenorSalario} anos e do sexo ${sexoMenorSalario}. `)
 
 
     //SAÍDA
